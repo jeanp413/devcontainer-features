@@ -1,12 +1,12 @@
 {
     "name": "VS Code Browser",
     "id": "vscode-browser",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Install VS Code Browser in an environment.",
     "options": {
     },
     "installsAfter": [
         "ghcr.io/devcontainers/features/common-utils"
     ],
-    "postStartCommand": "[ -d /usr/local/gitpod/shared ] && /opt/gitpod/vscode-browser/vscode-browser-agent install || exit 0"
+    "postStartCommand": "[ -d /usr/local/gitpod/shared ] && /opt/gitpod/vscode-browser/vscode-browser-agent install --auto-start|| exit 0"
 }

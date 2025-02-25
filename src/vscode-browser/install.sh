@@ -19,19 +19,13 @@ arch_detect() {
 
 arch_detect
 
-GITPOD_DIR="/usr/local/gitpod/shared"
-INSTALL_PATH="/usr/local/gitpod/shared/vscode-browser/vscode-browser-agent"
+INSTALL_PATH="/opt/gitpod/vscode-browser/vscode-browser-agent"
 BINARY_URL="https://gitpod-flex-releases.s3.amazonaws.com/vscode-browser/latest/vscode-browser-agent-$ARCH"
 install() {
     mkdir -p "$(dirname $INSTALL_PATH)"
     curl -fsSL "$BINARY_URL" -o "$INSTALL_PATH"
     chmod +x "$INSTALL_PATH"
 }
-
-if [ ! -d "$GITPOD_DIR" ]; then
-    echo "Gitpod Environment not detected, skipping installation..."
-    exit 0
-fi
 
 echo "Istalling VS Code Browser feature..."
 

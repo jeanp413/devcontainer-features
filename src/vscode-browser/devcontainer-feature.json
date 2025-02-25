@@ -8,5 +8,5 @@
     "installsAfter": [
         "ghcr.io/devcontainers/features/common-utils"
     ],
-    "postStartCommand": "[ -f /usr/local/gitpod/shared/vscode-browser/vscode-browser-agent ] && /usr/local/gitpod/shared/vscode-browser/vscode-browser-agent install"
+    "postStartCommand": "[ -d /usr/local/gitpod/shared ] && /opt/gitpod/vscode-browser/vscode-browser-agent install || exit 0"
 }
